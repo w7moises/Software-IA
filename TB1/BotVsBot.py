@@ -34,7 +34,7 @@ for i in range(cols):
 pygame.init()
 window = [1000, 1000]
 screen = pygame.display.set_mode(window)
-pygame.display.set_caption("Quoridor")
+pygame.display.set_caption("Laberinto")
 clock = pygame.time.Clock()
 
 def main():
