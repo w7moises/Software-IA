@@ -44,17 +44,17 @@ def main():
     startBot = (49, 49)
     turn = 0
     while True:
-        for evento in pygame.event.get():
-            if evento.type == pygame.QUIT:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
                 pygame.quit()
-            elif evento.type == pygame.MOUSEBUTTONDOWN:
-                if evento.button == 3:
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 3:
                     pos = pygame.mouse.get_pos()
                     col = pos[0] // (WIDTH + MARGEN)
                     row = pos[1] // (HEIGHT + MARGEN)
                     grid[row][col] = 1
-            elif evento.type == pygame.KEYDOWN:
-                if evento.key == pygame.K_1:
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
                     turn = 1
 
         n = len(grid)
