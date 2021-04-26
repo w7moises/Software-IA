@@ -11,8 +11,8 @@ RED = (255, 0, 0)
 BLACK = (0, 0, 0)
 BLUE = (14, 45, 99)
 PLIM = (241, 148, 138)
-WIDTH = 13
-HEIGHT = 13
+WIDTH = 15
+HEIGHT = 15
 MARGEN = 5
 x = 0
 cols = 50
@@ -55,7 +55,7 @@ def main():
                     grid[row][col] = 1
             elif evento.type == pygame.KEYDOWN:
                 if evento.key == pygame.K_1:
-                    turno = 1
+                    turn = 1
 
         n = len(grid)
         for row in range(n):
@@ -80,30 +80,30 @@ def main():
                                   HEIGHT])
 
 
-        Recorrido = bot.algoritmo(grid, start, final, 2)
-        path = Recorrido.a_star()
+        Route = bot.algorithm(grid, start, final, 2)
+        path = Route.a_star()
         data1 = path[0]
         data2 = path[1]
 
-        Recorrido2 = bot2.algoritmo(grid, startBot, finalBot, 3)
-        path2 = Recorrido2.a_star()
+        Route2 = bot2.algorithm(grid, startBot, finalBot, 3)
+        path2 = Route2.a_star()
         data3 = path2[0]
         data4 = path2[1]
 
 
         if turn == 1:
             time.sleep(0.2)
-            Movimiento = bot.movimientoBot(grid, data1, data2, x, 2)
-            Movimiento.movimiento()
-            inicio = Movimiento.movimiento()
+            Movement = bot.movementBot(grid, data1, data2, x, 2)
+            Movement.movement()
+            start = Movement.movement()
             turn = 2
 
 
         if turn == 2:
             time.sleep(0.2)
-            Movimiento2 = bot2.movimientoBot(grid, data3, data4, x, 3)
-            Movimiento2.movimiento()
-            inicioBot = Movimiento2.movimiento()
+            Movement2 = bot2.movementBot(grid, data3, data4, x, 3)
+            Movement2.movement()
+            startBot = Movement2.movement()
             turn = 1
 
 
@@ -116,4 +116,3 @@ def main():
 
         clock.tick(60)
         pygame.display.flip()
-
