@@ -12,9 +12,10 @@ class algorithm():
         data1[:] = []
         data2[:] = []
         path = a_star.astar(self.grid,self.inicio,self.final,self.jugador)
-        for elem in path:
-            data1.append(elem[0])
-            data2.append(elem[1])
+        if path is not None:
+            for elem in path:
+                data1.append(elem[0])
+                data2.append(elem[1])
         return data1,data2
 
 class movementBot():
