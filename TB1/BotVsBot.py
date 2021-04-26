@@ -30,7 +30,10 @@ for i in range(cols):
             if (lucky == 2):
                 grid[j][i] = 1
 
-
+grid[0][0] = 0
+grid[1][1] = 0
+grid[48][48] = 0
+grid[49][49] = 0
 pygame.init()
 window = [1000, 1000]
 screen = pygame.display.set_mode(window)
